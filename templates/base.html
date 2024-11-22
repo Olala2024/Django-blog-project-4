@@ -21,8 +21,42 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <span class="brand">c<span class="red-o">o</span>de<span class="thin">|star</span></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     {% block content %}
     {% endblock %}
+
+    <footer class="footer mt-auto py-3 bg-dark text-white text-center">
+        <p>Made by Olha Burtseva</p>
+        <p>
+            <a href="https://www.facebook.com" class="text-white me-3" aria-label="Facebook"><i
+                    class="fab fa-facebook-square"></i></a>
+            <a href="https://www.twitter.com" class="text-white me-3" aria-label="Twitter"><i
+                    class="fab fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com" class="text-white me-3" aria-label="Instagram"><i
+                    class="fab fa-instagram-square"></i></a>
+            <a href="https://www.youtube.com" class="text-white" aria-label="YouTube"><i
+                    class="fab fa-youtube-square"></i></a>
+        </p>
+    </footer>
 </body>
 
 </html>
