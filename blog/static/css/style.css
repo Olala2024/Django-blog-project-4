@@ -98,3 +98,68 @@ p.author {
   background-color: #23bbbb;
   color: #ffffff;
 }
+
+/* Link Styling */
+a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #445261;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e84610;
+}
+
+/* Pagination */
+.pagination {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-link {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: #445261;
+  border: 1px solid #dddddd;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+  color: #ffffff;
+  background-color: #e84610;
+  border: none;
+}
+
+/* Footer */
+.footer {
+  background-color: #445261;
+  color: #ffffff;
+  padding: 15px 0;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer i {
+  margin: 0 10px;
+  color: #e84610;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer i:hover {
+  color: #23bbbb;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+  }
+}
