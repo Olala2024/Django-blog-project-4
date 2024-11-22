@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Masthead Section -->
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0 align-items-center">
+            <div class="col-md-6 masthead-text">
+                <!-- Post Title -->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post Metadata: Author and Created Date -->
+                <p class="post-subtitle">
+                    <strong>{{ post.author }}</strong> | {{ post.created_on }}
+                </p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- Dynamic image loading or fallback -->
+                {% if post.image %}
+                <img src="{{ post.image.url }}" class="scale" alt="Image for {{ post.title }}">
+                {% else %}
+                <img src="{% static 'images/mydefault.jpg' %}" class="scale" alt="Default placeholder">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
