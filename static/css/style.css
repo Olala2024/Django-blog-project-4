@@ -31,20 +31,17 @@ body {
 }
 
 /* Masthead Section */
-img.scale {
-  width: 100%;
-}
 
 .masthead {
   position: relative;
   overflow: hidden;
   width: 100%;
+  height: 50vh;
 }
 
 .masthead-image {
   width: 100%;
-  height: auto;
-  max-height: 400px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -205,6 +202,10 @@ a:hover {
 
   .btn {
     font-size: 0.8rem;
+  }
+
+  .masthead {
+    height: 30vh;
   }
 
   .masthead-text-overlay {
