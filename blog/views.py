@@ -19,8 +19,9 @@ def post_detail(request, slug):
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
 
-    if request.method == "POST":
-    comment_form = CommentForm(data=request.POST)
+    if request.method == "POST": 
+        comment_form = CommentForm(data=request.POST)
+
     if comment_form.is_valid():
         comment = comment_form.save(commit=False)
         comment.author = request.user
