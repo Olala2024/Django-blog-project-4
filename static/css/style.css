@@ -1,8 +1,8 @@
 /* General Body Styling */
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f9fafc; /* Subtle background for a clean look */
-  color: #4a4a4f; /* Neutral text color for readability */
+  background-color: #f9fafc;
+  color: #4a4a4f;
   margin: 0;
   padding: 0;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 .red-o {
-  color: #e84610; /* Highlight color for brand logo */
+  color: #e84610;
 }
 
 .thin {
@@ -28,6 +28,50 @@ body {
 .main-bg {
   background-color: #f9fafc;
   min-height: 100vh;
+}
+
+/* Masthead Section */
+img.scale {
+  width: 100%;
+}
+
+.masthead {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.masthead-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.masthead-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 50%;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.post-subtitle {
+  font-size: 1rem;
+  margin: 0rem;
 }
 
 /* Card styling */
@@ -161,5 +205,31 @@ a:hover {
 
   .btn {
     font-size: 0.8rem;
+  }
+
+  .masthead-text-overlay {
+    top: 40%;
+    left: 5%;
+    max-width: 90%;
+    padding: 0.5rem;
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .post-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .post-title {
+    font-size: 0.8rem;
+  }
+
+  .post-subtitle {
+    font-size: 0.6rem;
   }
 }

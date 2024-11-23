@@ -1,8 +1,8 @@
 /* General Body Styling */
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f9fafc; /* Subtle background for a clean look */
-  color: #4a4a4f; /* Neutral text color for readability */
+  background-color: #f9fafc;
+  color: #4a4a4f;
   margin: 0;
   padding: 0;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 .red-o {
-  color: #e84610; /* Highlight color for brand logo */
+  color: #e84610;
 }
 
 .thin {
@@ -28,6 +28,42 @@ body {
 .main-bg {
   background-color: #f9fafc;
   min-height: 100vh;
+}
+
+/* Masthead Section */
+.masthead {
+  position: relative;
+  overflow: hidden;
+}
+
+.masthead-image {
+  width: 100%;
+  height: auto;
+  max-height: 400 px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.masthead-text-overlay {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 40%;
+}
+
+.post-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.post-subtitle {
+  font-size: 1rem;
+  margin: 0rem;
 }
 
 /* Card styling */
