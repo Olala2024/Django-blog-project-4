@@ -6,14 +6,6 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0 align-items-center">
-            <div class="col-md-6 masthead-text">
-                <!-- Post Title -->
-                <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post Metadata: Author and Created Date -->
-                <p class="post-subtitle">
-                    <strong>{{ post.author }}</strong> | {{ post.created_on }}
-                </p>
-            </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- Dynamic image loading or fallback -->
                 {% if post.image %}
@@ -21,7 +13,26 @@
                 {% else %}
                 <img src="{% static 'images/mydefault.jpg' %}" class="scale" alt="Default placeholder">
                 {% endif %}
+                <!-- Text Overlay -->
+                <div class="masthead-text-overlay">
+                    <h1 class="post-title">{{ post.title }}</h1>
+                    <p class="post-subtitle">
+                        <strong>{{ post.author }}</strong> | {{ post.created_on }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<div class="container"></div>
+<div class="row">
+    <div class="col card mb-4  mt-3 left  top">
+        <div class="card-body">
+            <p class="card-text">
+                {{ post.content | safe }}
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
