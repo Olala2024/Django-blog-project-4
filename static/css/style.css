@@ -135,7 +135,7 @@ p.author {
   background-color: #188181;
   color: #ffffff;
   border: none;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .btn-primary:hover {
