@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from django.views import generic
+from django.shortcuts import render, get_object_or_404, reverse
+from django.views import generic, View
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post
 from .forms import CommentForm
@@ -32,7 +33,7 @@ def post_detail(request, slug):
         'Comment submitted and awaiting approval'
         )
 
-    comment_form = CommentForm()
+    comment_form = CommentForm(request.POST)
 
     return render(
         request,
@@ -42,3 +43,15 @@ def post_detail(request, slug):
         "comment_count": comment_count,
         "comment_form": comment_form,},
     )
+
+class PostLike(View):
+
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
