@@ -37,7 +37,8 @@
                 <a class="navbar-brand" href="{% url 'home' %}">
                     <span class="brand">Code<span class="red-o">like</span>a<span class="thin">|star</span></span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -105,6 +106,13 @@
                     class="fab fa-youtube-square"></i></a>
         </p>
     </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmGxUgG3Cw6pPueo4zYO1pDj1mzI+iwW8y5F/5xYl7EpdfGHMhwP8/" crossorigin="anonymous">
+        </script>
+
+    <!-- Custom JS (optional) -->
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 

@@ -27,32 +27,37 @@ body {
 /* Main Blog Layout */
 .main-bg {
   background-color: #f9fafc;
-  min-height: 100vh;
+  min-height: 75vh;
 }
 
 /* Masthead Section */
+
 .masthead {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 50vh;
 }
 
 .masthead-image {
   width: 100%;
-  height: auto;
-  max-height: 400 px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 .masthead-text-overlay {
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 10%;
+  transform: translateY(-50%);
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem;
   border-radius: 5px;
-  max-width: 40%;
+  max-width: 50%;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .post-title {
@@ -127,7 +132,7 @@ p.author {
   background-color: #188181;
   color: #ffffff;
   border: none;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .btn-primary:hover {
@@ -197,5 +202,35 @@ a:hover {
 
   .btn {
     font-size: 0.8rem;
+  }
+
+  .masthead {
+    height: 30vh;
+  }
+
+  .masthead-text-overlay {
+    top: 40%;
+    left: 5%;
+    max-width: 90%;
+    padding: 0.5rem;
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .post-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .post-title {
+    font-size: 0.8rem;
+  }
+
+  .post-subtitle {
+    font-size: 0.6rem;
   }
 }
