@@ -26,6 +26,7 @@ body {
 
 /* Main Blog Layout */
 .main-bg {
+  margin-left: 2rem;
   background-color: #f9fafc;
   min-height: 75vh;
 }
