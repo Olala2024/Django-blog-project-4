@@ -1,4 +1,4 @@
-# CODELIKEA|STAR
+# CODE*LIKE*A|STAR
 
 ## Project Description
 
