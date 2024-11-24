@@ -4,22 +4,24 @@
 {% load crispy_forms_tags %}
 
 <!-- Masthead Section -->
-<div class="masthead">
-    <div class="row g-0 align-items-center">
-        <div class="col-md-6 masthead-image">
-            <!-- Dynamic image loading or fallback -->
-            {% if post.image %}
-            <img src="{{ post.image.url }}" alt="Image for {{ post.title }}">
-            {% else %}
-            <img src="{% static 'images/mydefault.jpg' %}" class="scale" alt="Default placeholder">
-            {% endif %}
+<div class="container">
+    <div class="masthead">
+        <div class="row g-0 align-items-center">
+            <div class="col-md-6 masthead-image">
+                <!-- Dynamic image loading or fallback -->
+                {% if "placeholder" in post.featured_image.url %}
+                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="Default placeholder image">
+                {% else %}
+                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="Image for {{ post.title }}">
+                {% endif %}
 
-            <!-- Text Overlay -->
-            <div class="masthead-text-overlay">
-                <h1 class="post-title">{{ post.title }}</h1>
-                <p class="post-subtitle">
-                    <strong>{{ post.author }}</strong> | {{ post.created_on }}
-                </p>
+                <!-- Text Overlay -->
+                <div class="masthead-text-overlay">
+                    <h1 class="post-title">{{ post.title }}</h1>
+                    <p class="post-subtitle">
+                        <strong>{{ post.author }}</strong> | {{ post.created_on }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

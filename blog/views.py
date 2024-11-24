@@ -19,6 +19,7 @@ def post_detail(request, slug):
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
+    comment_form = CommentForm(request.POST)
 
     if request.method == "POST": 
         comment_form = CommentForm(data=request.POST)
@@ -32,8 +33,6 @@ def post_detail(request, slug):
         request, messages.SUCCESS,
         'Comment submitted and awaiting approval'
         )
-
-    comment_form = CommentForm(request.POST)
 
     return render(
         request,
@@ -49,6 +48,7 @@ class PostLike(View):
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
+        # Toggle the like status for the logged-in user
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
