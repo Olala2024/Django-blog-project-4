@@ -139,6 +139,8 @@ p.author {
   color: #ffffff;
   border: none;
   align-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 .btn-primary:hover {
@@ -177,6 +179,15 @@ a:hover {
   color: #ffffff;
   background-color: #e84610;
   border: none;
+}
+
+/* Alert Styling */
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #000;
+  border-radius: .25rem;
 }
 
 /* Footer */
