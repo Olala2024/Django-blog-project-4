@@ -5,7 +5,19 @@
 
 <div class="container-fluid">
     <div class="row">
+        <!-- Categories Column -->
+        <div class="col-12 mt-3">
+            <ul class="list-inline">
+                {% for category in categories %}
+                <li class="list-inline-item">
+                    <a href="#">{{ category.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
+    <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -18,7 +30,7 @@
                                 <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
@@ -33,6 +45,7 @@
 
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                            <p class="card-text text-muted h6">Category: {{ post.category.name }}</p>
 
                             <!-- Read More Button -->
                             <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More</a>

@@ -2,14 +2,18 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import Post
+from .models import Post, Category
 from .forms import CommentForm
-
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
     paginate_by = 8
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
 
 def post_detail(request, slug):
     queryset = Post.objects.filter(status=1)
@@ -22,7 +26,6 @@ def post_detail(request, slug):
         liked = True
 
     comment_form = CommentForm(request.POST)
-
 
     if request.method == "POST" and comment_form.is_valid(): 
         comment_form = CommentForm(data=request.POST)
@@ -45,7 +48,7 @@ def post_detail(request, slug):
             "comment_count": comment_count,
             "comment_form": comment_form,
             "liked": liked,
-            },
+        },
     )
 
 class PostLike(View):
