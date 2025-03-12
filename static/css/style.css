@@ -8,11 +8,16 @@ body {
 }
 
 /* Brand Styling */
-.brand {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: #4a4a4f;
+
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  max-width: 150px;
+}
+
+.brand-logo {
+  max-width: 200px;
+  height: auto;
 }
 
 .red-o {
@@ -201,6 +206,10 @@ a:hover {
     font-size: 1rem;
   }
 
+  .brand-logo-container {
+    max-width: 80px;
+  }
+
   .btn {
     font-size: 0.8rem;
   }
@@ -229,6 +238,10 @@ a:hover {
 @media (max-width: 576px) {
   .post-title {
     font-size: 0.8rem;
+  }
+
+  .brand-logo-container {
+    max-width: 40px;
   }
 
   .post-subtitle {
