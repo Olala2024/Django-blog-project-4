@@ -6,6 +6,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True, null=True)
 
     def __str__(self):
         return self.name

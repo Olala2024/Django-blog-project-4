@@ -6,13 +6,23 @@ from .models import Post, Category
 from .forms import CommentForm
 
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
     paginate_by = 8
+
+    def get_queryset(self):
+        queryset = Post.objects.filter(status=1).order_by('-created_on')
+        category_slug = self.kwargs.get('slug')
+        if category_slug:
+            self.category = get_object_or_404(Category, slug=category_slug)
+            queryset = queryset.filter(category=self.category)
+        else:
+            self.category = None
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['current_category'] = self.category
         return context
 
 def post_detail(request, slug):
