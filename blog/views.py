@@ -1,9 +1,22 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post, Category
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
+
+class ContactView(View):
+    def get(self, request):
+        form = ContactForm()
+        return render(request, 'blog/contact.html', {'form': form})
+
+    def post(self, request):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your message has been sent successfully!')
+            return redirect('contact')
+        return render(request, 'blog/contact.html', {'form': form})
 
 class PostList(generic.ListView):
     template_name = "blog/index.html"
