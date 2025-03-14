@@ -25,6 +25,8 @@ This project demonstrates key Django functionalities such as CRUD operations, us
 
 ## UI/UX <a id="uiux"></a>
 
+![Wireframe](static/images/wireframe.png)
+
 The user interface of this blog was designed with simplicity and ease of use in mind, ensuring a smooth and enjoyable browsing experience. The layout is responsive, adapting seamlessly across various devices, from desktop to mobile. To create a cohesive and appealing aesthetic, the color palette was generated using [Coolors.co](https://coolors.co). This tool helped select a modern and complementary set of colors that enhance the readability and overall user experience.
 ![Color palette](static/images/color.png)
 
