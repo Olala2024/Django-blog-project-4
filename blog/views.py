@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import Post, Category
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from .models import Post, Category, Comment
 from .forms import CommentForm, ContactForm
 
 class ContactView(View):
@@ -85,3 +87,28 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+@method_decorator(login_required, name='dispatch')
+class CommentUpdateView(View):
+    def get(self, request, pk):
+        comment = get_object_or_404(Comment, pk=pk, author=request.user)
+        form = CommentForm(instance=comment)
+        return render(request, 'blog/comment_edit.html', {'form': form})
+
+    def post(self, request, pk):
+        comment = get_object_or_404(Comment, pk=pk, author=request.user)
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Comment updated successfully!')
+            return redirect('post_detail', slug=comment.post.slug)
+        return render(request, 'blog/comment_edit.html', {'form': form})
+
+@method_decorator(login_required, name='dispatch')
+class CommentDeleteView(View):
+    def post(self, request, pk):
+        comment = get_object_or_404(Comment, pk=pk, author=request.user)
+        post_slug = comment.post.slug
+        comment.delete()
+        messages.success(request, 'Comment deleted successfully!')
+        return redirect('post_detail', slug=post_slug)
