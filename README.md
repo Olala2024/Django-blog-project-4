@@ -164,10 +164,16 @@ This project utilizes a combination of modern web technologies to deliver a dyna
 ### HTML Validation
 
 The HTML code was validated using the [W3C HTML Validator](https://validator.w3.org/).
+The validation test results indicate that the `base.html` file is compliant with web standards and best practices. No further issues were found.
+
+![Validation W3C](static/images/validation1.png)
 
 ### CSS Validation
 
 The CSS code was validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+The validation test results indicate that the CSS code is compliant with web standards and best practices. No errors were found.
+
+![Validation CSS](static/images/validation2.png)
 
 ## Testing <a id="testing"></a>
 
@@ -268,7 +274,7 @@ The following resources were used to enhance the functionality and design of thi
 - **[Font Awesome CSS](https://fontawesome.com)**: Used to include icons for enhancing the visual appearance of the blog.
 - **[Canva](https://www.canva.com/)**: Used to create the logo for the blog.
 
-- [Code Institute](https://codeinstitute.net)**: Lessons provided by Code Institute in section "I Think Therefore I Blog" that were fundamental in shaping this project.
+- **[Code Institute](https://codeinstitute.net)**: Lessons provided by Code Institute in section "I Think Therefore I Blog" that were fundamental in shaping this project.
 - The photos used in the blog posts were sourced from [Pexels](https://www.pexels.com).
 - A special thanks to [ChatGPT](https://openai.com/chatgpt) for the invaluable assistance in troubleshooting and offering helpful suggestions throughout the development process.
 - I would also like to acknowledge the helpful resources provided in this [YouTube Playlist](https://www.youtube.com/playlist?list=PL_KegS2ON4s580mS3nPt5x_eu6kO2cvOc), which provided guidance on various aspects of web development.
