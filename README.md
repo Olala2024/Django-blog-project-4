@@ -81,8 +81,7 @@ Wireframes were created using [MockFlow](https://app.mockflow.com/) to plan the 
 
 Key features of this blog include:
 
-![home page](static/images/home.png)
-![home footer](static/images/home2.png)
+![home page](static/images/image.png)
 
 - **Post Block Layout**: The homepage displays 8 post blocks per page, each consisting of the author, title, excerpt, and publication date. Each post opens in a new window with a unique URL slug.
 
@@ -92,13 +91,34 @@ Key features of this blog include:
 
 ![btn](static/images/btn.png)
 
-- **Draft Posts**: Admins can create, save, and manage draft posts, which are hidden from regular users.
+- **Draft Posts**: Admin has admin panel and can create, save, and manage draft posts, which are hidden from regular users.
+
+![Admin](static/images/admin.png)
+
+![Post admin](static/images/post%20admin.png)
+
 - **User Registration**: Users can register an account to comment and like posts, with feedback on registration status.
-- **Post Management**: Admins can create, read, update, and delete posts, with a dedicated "Manage Posts" section.
+
+![Login](static/images/login.png)
+
+![Registration](static/images/registration.png)
+
 - **Post Detail View**: Clicking on a post title or "Read More" shows the full content, likes, and comments.
+
+![Article](static/images/article.png)
+
 - **Comments**: Users can leave comments on posts, with validation for empty or invalid submissions.
+
+![Comments](static/images/comments.png)
+
 - **Like Counter**: Users and admins can view and interact with the like counter for each post.
+
+![Likes](static/images/likes.png)
+
 - **Pagination**: Posts are paginated, with controls for navigating through multiple pages of content.
+
+![next](static/images/next.png)
+![prev](static/images/prev.png)
 
 ### Agile Methodology
 
@@ -246,7 +266,9 @@ The following resources were used to enhance the functionality and design of thi
 - **[Google Fonts](https://fonts.google.com)**: Used to import web fonts for improved typography and readability.
 - **[Bootstrap](https://getbootstrap.com)**: A front-end framework used for building the responsive layout and ensuring a mobile-friendly design.
 - **[Font Awesome CSS](https://fontawesome.com)**: Used to include icons for enhancing the visual appearance of the blog.
+- **[Canva](https://www.canva.com/)**: Used to create the logo for the blog.
 
+- [Code Institute](https://codeinstitute.net)**: Lessons provided by Code Institute in section "I Think Therefore I Blog" that were fundamental in shaping this project.
 - The photos used in the blog posts were sourced from [Pexels](https://www.pexels.com).
 - A special thanks to [ChatGPT](https://openai.com/chatgpt) for the invaluable assistance in troubleshooting and offering helpful suggestions throughout the development process.
 - I would also like to acknowledge the helpful resources provided in this [YouTube Playlist](https://www.youtube.com/playlist?list=PL_KegS2ON4s580mS3nPt5x_eu6kO2cvOc), which provided guidance on various aspects of web development.
