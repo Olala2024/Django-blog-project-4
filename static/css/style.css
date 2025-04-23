@@ -12,11 +12,12 @@ body {
 .brand-logo-container {
   display: flex;
   align-items: center;
-  max-width: 150px;
+  max-width: 200px;
+  width: 100%;
 }
 
 .brand-logo {
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
 }
 
@@ -229,8 +230,9 @@ a:hover {
     font-size: 1rem;
   }
 
-  .brand-logo-container {
-    max-width: 80px;
+  .brand-logo {
+    max-width: 120px;
+    height: auto;
   }
 
   .btn {
@@ -263,8 +265,9 @@ a:hover {
     font-size: 0.8rem;
   }
 
-  .brand-logo-container {
-    max-width: 40px;
+  .brand-logo {
+    max-width: 100px;
+    height: auto;
   }
 
   .post-subtitle {
